@@ -1,8 +1,8 @@
 import * as React from "react";
 import {Route, Switch} from "react-router";
-import Main from "./pages/Main/Main";
-import Header from "./components/Header/Header";
-import XOGame from "./pages/XOGame/XOGame";
+import Main from "./Main/Main";
+import Header from "../components/Header/Header";
+import XOGame from "./XOGame/XOGame";
 
 export default () => (
     <>

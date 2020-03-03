@@ -1,27 +1,25 @@
 import * as React from "react";
+import {RowLayout} from "../UI/Layout/RowLayout";
+import header from "./Header.module.scss";
+import tw from "../../assets/css/tailwind.module.css"
+import {Cell} from "../UI/Layout/Cell";
 import {Link} from "react-router-dom";
-// import "./Header.scss"
+import home from '../../assets/images/house.svg'
+import XOG from '../../assets/images/XOG.svg'
 
-export default class Header extends React.Component {
-    render() {
-        return (
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <Link className="navbar-brand" to='/'>Main</Link>
-
-                <button className="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/XOGame">XOGame</Link>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        )
-    }
-}
+export default () => (
+    <header className={header['border-bottom-gray']}>
+        <RowLayout className={[tw.flex, tw['py-3'], tw['px-12'], tw['items-center']]}>
+            <Cell>
+                <Link to="/">
+                    <img className={header.img_size} src={home} alt='home'/>
+                </Link>
+            </Cell>
+            <Cell right>
+                <Link to="/XOGame">
+                    <img className={header.img_size} src={XOG} alt='XOGame'/>
+                </Link>
+            </Cell>
+        </RowLayout>
+    </header>
+)
