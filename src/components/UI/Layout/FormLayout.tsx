@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { style, StylableProps } from '../Stylable/Stylable';
+import {style, StylableProps} from '../Stylable/Stylable';
 
 export interface Props extends StylableProps {
     /**
@@ -35,12 +35,9 @@ export class FormLayout extends React.PureComponent<Props, {}> {
     static displayName = 'FormLayout';
 
     render() {
-        const { paddingTop, paddingRight, paddingBottom, paddingLeft } = this.props;
-        const styleProps = { paddingTop, paddingRight, paddingBottom, paddingLeft };
-        console.log(style(this.props,
-            <div style={styleProps}>
-                {this.props.children}
-            </div>))
+        const {paddingTop, paddingRight, paddingBottom, paddingLeft} = this.props;
+        const styleProps = {paddingTop, paddingRight, paddingBottom, paddingLeft};
+
         return style(this.props,
             <div style={styleProps}>
                 {this.props.children}
